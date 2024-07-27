@@ -1,21 +1,8 @@
-import { createClient } from "@supabase/supabase-js";
 import { Auth } from "@supabase/auth-ui-react";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
-import { useNavigate } from "react-router-dom";
 import supabase from "../../supabaseClient";
 
-function LoginPage() {
-  const navigate = useNavigate();
-
-  supabase.auth.onAuthStateChange(async (event) => {
-    console.log("event", event);
-    if (event === "SIGNED_IN") {
-      navigate("/success", { replace: true });
-    } else if (event === "SIGNED_OUT") {
-      console.log("signed out");
-      navigate("/login", { replace: true });
-    }
-  });
+function LoginPage({ handleGoBack }) {
   return (
     <div className="App">
       <header className="App-header">
@@ -25,6 +12,12 @@ function LoginPage() {
           theme="light"
           providers={["google"]}
         />
+        <button
+          onClick={handleGoBack}
+          className="btn btn--dark text-white bg-hslblack flex items-center justify-center px-4 py-2 text-base font-normal mr-2 mt-4"
+        >
+          Go Back
+        </button>
       </header>
     </div>
   );
