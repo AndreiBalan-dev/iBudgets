@@ -86,7 +86,7 @@ const Dashboard = () => {
   const { budgets, expenses } = useLoaderData(); // removed username from here
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [inLoginPage, setInLoginPage] = useState(false);
+  const [username, setUsername] = useState("undefined");
 
   supabase.auth.onAuthStateChange(async (event) => {
     if (event === "SIGNED_IN") {
@@ -103,6 +103,7 @@ const Dashboard = () => {
       console.log(session.data.session);
       if (session.data.session !== null) {
         setIsLoggedIn(true);
+        setUsername(session.data.session.user.user_metadata.full_name);
       }
     };
     getSession();
@@ -113,7 +114,7 @@ const Dashboard = () => {
       {isLoggedIn ? (
         <div className="dashboard">
           <h1>
-            Welcome back, <span className="accent">user</span>
+            Welcome back, <span className="accent">{username}</span>
           </h1>
           <div className="grid-sm">
             {budgets && budgets.length > 0 ? (
