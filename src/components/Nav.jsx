@@ -11,7 +11,7 @@ const Nav = ({ userName }) => {
   return (
     <nav>
       <NavLink to="/" aria-label="Go to home">
-        <img src={logomark} alt="" height={30} />
+        <img src={logomark} alt="iBudget Home" height={30} />
         <span>iBudgets</span>
       </NavLink>
       {userName && (
