@@ -18,7 +18,9 @@ const Nav = ({ userName, user }) => {
   };
   const handleSignout = async () => {
     await supabase.auth.signOut();
-    navigate("/main");
+    setTimeout(() => {
+      navigate("/main");
+    }, 3000);
   };
 
   return (
