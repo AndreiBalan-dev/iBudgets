@@ -7,12 +7,18 @@ import { ArrowUturnLeftIcon } from "@heroicons/react/24/solid";
 // assets
 import logomark from "../assets/logomark.svg";
 
-const Nav = ({ userName }) => {
+import supabase from "../../supabaseClient";
+
+const Nav = ({ userName, user }) => {
   const navigate = useNavigate();
   const handleRedirect = () => {
     console.log("Test");
     localStorage.removeItem("userName");
     navigate(0);
+  };
+  const handleSignout = async () => {
+    await supabase.auth.signOut();
+    navigate("/main");
   };
 
   return (
@@ -28,6 +34,15 @@ const Nav = ({ userName }) => {
         >
           <span>Go Back</span>
           <ArrowUturnLeftIcon width={20} />
+        </button>
+      )}
+
+      {user && (
+        <button
+          className="btn text-dark flex items-center justify-center px-4 py-2 text-base font-bold mr-2"
+          onClick={handleSignout}
+        >
+          Signout
         </button>
       )}
     </nav>
