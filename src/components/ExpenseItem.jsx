@@ -43,7 +43,7 @@ const ExpenseItem = ({ expense, showBudget }) => {
           <input type="hidden" name="expenseId" value={expense.id} />
           <button
             type="submit"
-            className="btn btn--warning bg-hslwarning text-white"
+            className="btn btn--warning bg-hslwarning text-white  flex items-center justify-center px-4 py-2"
             aria-label={`Delete ${expense.name} expense`}
           >
             <TrashIcon width={20} />

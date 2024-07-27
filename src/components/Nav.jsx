@@ -24,7 +24,7 @@ const Nav = ({ userName }) => {
             }
           }}
         >
-          <button type="submit" className="btn btn--warning text-white bg-hslwarning">
+          <button type="submit" className="btn btn--warning text-white bg-hslwarning flex items-center justify-center px-4 py-2 text-base font-normal mr-2">
             <span>Delete User</span>
             <TrashIcon width={20} />
           </button>

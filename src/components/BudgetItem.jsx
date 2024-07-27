@@ -49,7 +49,7 @@ const BudgetItem = ({ budget, showDelete = false }) => {
               }
             }}
           >
-            <button type="submit" className="btn text-white bg-hslred">
+            <button type="submit" className="btn text-white bg-hslred flex items-center justify-center px-4 py-2 text-base font-normal mr-2">
               <span>Delete Budget</span>
               <TrashIcon width={20} />
             </button>

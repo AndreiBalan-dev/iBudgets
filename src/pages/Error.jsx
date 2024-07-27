@@ -21,7 +21,7 @@ const Error = () => {
         </button>
         <Link
           to="/"
-          className="btn btn--dark text-white bg-hslblack"
+          className="btn btn--dark text-white bg-hslblack flex items-center justify-center px-4 py-2 text-base font-normal mr-2"
         >
           <HomeIcon width={20} />
           <span>Go home</span>
