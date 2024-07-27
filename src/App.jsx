@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Library
 import { ToastContainer } from "react-toastify";
@@ -17,10 +17,7 @@ import Success from "./pages/successPage";
 import Dashboard, { dashboardAction, dashboardLoader } from "./pages/Dashboard";
 import Error from "./pages/Error";
 import BudgetPage, { budgetAction, budgetLoader } from "./pages/BudgetPage";
-import ExpensesPage, {
-  expensesAction,
-  expensesLoader,
-} from "./pages/ExpensesPage";
+import ExpensesPage, { expensesAction, expensesLoader } from "./pages/ExpensesPage";
 
 const router = createBrowserRouter([
   {
@@ -78,10 +75,20 @@ const router = createBrowserRouter([
 function App() {
   return (
     <div className="App">
+      {/* <Router>
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/success" element={<Success />} />
+        </Routes>
+      </Router> */}
       <RouterProvider router={router} />
       <ToastContainer />
     </div>
   );
+}
+
+{
 }
 
 export default App;
