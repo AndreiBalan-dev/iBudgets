@@ -13,7 +13,7 @@ const Error = () => {
       <p>{error.message || error.statusText}</p>
       <div className="flex-md">
         <button
-          className="btn btn--dark"
+          className="btn btn--dark text-white bg-hslblack"
           onClick={() => navigate(-1)}
         >
           <ArrowUturnLeftIcon width={20} />
@@ -21,7 +21,7 @@ const Error = () => {
         </button>
         <Link
           to="/"
-          className="btn btn--dark"
+          className="btn btn--dark text-white bg-hslblack"
         >
           <HomeIcon width={20} />
           <span>Go home</span>

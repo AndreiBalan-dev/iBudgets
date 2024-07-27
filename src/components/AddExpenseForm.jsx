@@ -78,7 +78,7 @@ const AddExpenseForm = ({ budgets }) => {
           </select>
         </div>
         <input type="hidden" name="_action" value="createExpense" />
-        <button type="submit" className="btn btn--dark" disabled={isSubmitting}>
+        <button type="submit" className="btn btn--dark text-white bg-hslblack" disabled={isSubmitting}>
           {
             isSubmitting ? <span>Submitting…</span> : (
               <>
