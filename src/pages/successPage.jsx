@@ -11,7 +11,7 @@ function Success() {
 
   useEffect(() => {
     async function getUserData() {
-      await supabase.auth.getUser().then(value => {
+      await supabase.auth.getUser().then((value) => {
         // value.data.user
         if (value.data?.user) {
           console.log(value.data.user);

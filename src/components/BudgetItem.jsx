@@ -14,7 +14,7 @@ import {
 const BudgetItem = ({ budget, showDelete = false }) => {
   const { id, name, amount, color } = budget;
   const spent = calculateSpentByBudget(id);
-  console.log(color)
+  console.log(color);
 
   return (
     <div
@@ -49,7 +49,10 @@ const BudgetItem = ({ budget, showDelete = false }) => {
               }
             }}
           >
-            <button type="submit" className="btn text-white bg-hslred flex items-center justify-center px-4 py-2 text-base font-normal mr-2">
+            <button
+              type="submit"
+              className="btn text-white bg-hslred flex items-center justify-center px-4 py-2 text-base font-normal mr-2"
+            >
               <span>Delete Budget</span>
               <TrashIcon width={20} />
             </button>
