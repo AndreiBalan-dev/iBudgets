@@ -13,7 +13,7 @@ const Error = () => {
       <p>{error.message || error.statusText}</p>
       <div className="flex-md">
         <button
-          className="btn btn--dark text-white bg-hslblack"
+          className="btn btn--dark text-white bg-hslblack flex items-center justify-center px-4 py-2 text-base font-normal mr-2"
           onClick={() => navigate(-1)}
         >
           <ArrowUturnLeftIcon width={20} />
