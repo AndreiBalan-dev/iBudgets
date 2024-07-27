@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 // Library
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import supabase from "../supabaseClient";
 
 // Layouts
 import Main, { mainLoader } from "./layouts/Main";
