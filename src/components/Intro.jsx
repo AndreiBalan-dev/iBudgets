@@ -1,7 +1,7 @@
 import { Form } from "react-router-dom"
 
 // library
-import { UserPlusIcon } from "@heroicons/react/24/solid";
+import { StarIcon, UserPlusIcon } from "@heroicons/react/24/solid";
 
 // assets
 import illustration from "../assets/illustration.jpg"
@@ -27,6 +27,10 @@ const Intro = () => {
           <button type="submit" className="btn btn--dark bg-hslblack text-white flex items-center justify-center px-4 py-2 text-base font-normal mr-2">
             <span>Create Account</span>
             <UserPlusIcon width={20} />
+          </button>
+          <button type="submit" className="btn btn--dark bg-hslblack text-white flex items-center justify-center px-4 py-2 text-base font-normal mr-2">
+            <span>Discover Premium</span>
+            <StarIcon width={20} />
           </button>
         </Form>
       </div>
