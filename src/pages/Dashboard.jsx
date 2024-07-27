@@ -137,7 +137,10 @@ const Dashboard = () => {
                         .slice(0, 8)}
                     />
                     {expenses.length > 8 && (
-                      <Link to="expenses" className="btn btn--dark">
+                      <Link
+                        to="expenses"
+                        className="btn--dark text-white bg-hslblack flex items-center justify-center px-4 py-2 text-base font-normal mr-2"
+                      >
                         View all expenses
                       </Link>
                     )}
