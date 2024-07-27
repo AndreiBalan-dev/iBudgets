@@ -5,13 +5,6 @@ import { useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import supabase from "../../supabaseClient";
 
-<<<<<<< HEAD
-=======
-const supabase = createClient(
-  "https://bxqljlahpxgvjybwodkl.supabase.co/",
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ4cWxqbGFocHhndmp5YndvZGtsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjIwNTI1MDYsImV4cCI6MjAzNzYyODUwNn0.eKcTCZ5k0cZRta4pBmx8o3qPd7tgW0YJOEzkAWQfq90"
-);
->>>>>>> 8881faae89729ddc02e55d0223f6443022e15396
 function Success() {
   const [user, setUser] = useState({});
   const navigate = useNavigate();
