@@ -87,12 +87,6 @@ export async function dashboardAction({ request }) {
 
 const Dashboard = () => {
   const { userName, budgets, expenses, waitlist } = useLoaderData();
-  const navigate = useNavigate();
-
-  const handleGoBack = () => {
-    localStorage.removeItem("waitlist");
-    navigate(0); 
-  };
 
   return (
     <>

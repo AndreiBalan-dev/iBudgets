@@ -1,6 +1,14 @@
 import React, { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Waitlist = () => {
+    const navigate = useNavigate();
+
+    const handleGoBack = () => {
+      localStorage.removeItem("waitlist");
+      navigate(0); 
+    };
+    
   return (
     <>
         <h2>Welcome to Premium Features</h2>
