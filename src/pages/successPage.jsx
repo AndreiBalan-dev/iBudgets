@@ -22,13 +22,29 @@ function Success() {
             })
         }
         getUserData();
-    }, [])
+    }, []);
 
+    async function signOutUser()  {
+        const { error } = await supabase.auth.signOut();
+        navigate("/");
+    }
 
     return (
         <div className="App">
             <header className="App-header">
+                { Object.keys(user).length !== 0 ?
+                    <>
+                        <h1>Success</h1>
+                        <button onClick={() => signOutUser()}>Sign Out</button>
+                    </>
+                :
+                    <>
+                        <h1>User is not logged in</h1>
+                        <button onClick={() => { navigate("/") }}>Go back home!</button>
+                    </>
+                }
                 <h1>Success</h1>
+               
             </header>
         </div>
     );
