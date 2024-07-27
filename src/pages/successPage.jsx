@@ -1,5 +1,6 @@
 import { createClient } from "@supabase/supabase-js";
-import { Auth, ThemeSupa } from "@supabase/auth-ui-shared";
+import { Auth } from "@supabase/auth-ui-react";
+import { ThemeSupa } from "@supabase/auth-ui-shared";
 import { useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 
