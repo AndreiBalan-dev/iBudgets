@@ -1,5 +1,5 @@
 // rrd imports
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
 
 // library imports
 import { toast } from "react-toastify";
@@ -20,13 +20,15 @@ import {
   fetchData,
   waait,
 } from "../helpers";
+import Waitlist from "../components/Waitlist";
 
 // loader
 export function dashboardLoader() {
   const userName = fetchData("userName");
   const budgets = fetchData("budgets");
   const expenses = fetchData("expenses");
-  return { userName, budgets, expenses };
+  const waitlist = fetchData("waitlist");
+  return { userName, budgets, expenses, waitlist };
 }
 
 // action
@@ -37,6 +39,9 @@ export async function dashboardAction({ request }) {
   const { _action, ...values } = Object.fromEntries(data);
 
   // new user submission
+
+  console.log(_action)
+
   if (_action === "newUser") {
     try {
       localStorage.setItem("userName", JSON.stringify(values.userName));
@@ -71,16 +76,13 @@ export async function dashboardAction({ request }) {
     }
   }
 
-  if (_action === "deleteExpense") {
+  if (_action === "discoverPremium") {
     try {
-      deleteItem({
-        key: "expenses",
-        id: values.expenseId,
-      });
-      return toast.success("Expense deleted!");
+      localStorage.setItem("waitlist", JSON.stringify(true));
+      return null;
     } catch (e) {
-      throw new Error("There was a problem deleting your expense.");
-    }
+      throw new Error("There was a problem with this action.");
+    }  
   }
 }
 
