@@ -10,7 +10,7 @@ import AddBudgetForm from "../components/AddBudgetForm";
 import AddExpenseForm from "../components/AddExpenseForm";
 import BudgetItem from "../components/BudgetItem";
 import Table from "../components/Table";
-import LoginPage from "../components/LoginPage";
+import LoginPage from "../components/LoginHandler";
 
 //  helper functions
 import {
