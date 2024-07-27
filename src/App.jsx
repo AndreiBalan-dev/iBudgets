@@ -13,8 +13,6 @@ import { logoutAction } from "./actions/logout";
 import { deleteBudget } from "./actions/deleteBudget";
 
 // Routes
-import Login from "./pages/loginPage";
-import Success from "./pages/successPage";
 import Dashboard, { dashboardAction, dashboardLoader } from "./pages/Dashboard";
 import Error from "./pages/Error";
 import BudgetPage, { budgetAction, budgetLoader } from "./pages/BudgetPage";
@@ -57,17 +55,6 @@ const router = createBrowserRouter([
       {
         path: "logout",
         action: logoutAction,
-      },
-      // Added routes
-      {
-        path: "login",
-        element: <Login />,
-        errorElement: <Error />,
-      },
-      {
-        path: "success",
-        element: <Success />,
-        errorElement: <Error />,
       },
     ],
   },

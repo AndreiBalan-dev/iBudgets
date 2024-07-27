@@ -1,13 +1,20 @@
 // rrd imports
-import { Form, NavLink } from "react-router-dom";
+import { Form, NavLink, useNavigate } from "react-router-dom";
 
 // library
-import { TrashIcon } from "@heroicons/react/24/solid";
+import { ArrowUturnLeftIcon } from "@heroicons/react/24/solid";
 
 // assets
 import logomark from "../assets/logomark.svg";
 
 const Nav = ({ userName }) => {
+  const navigate = useNavigate();
+  const handleRedirect = () => {
+    console.log("Test");
+    localStorage.removeItem("userName");
+    navigate(0);
+  };
+
   return (
     <nav>
       <NavLink to="/" aria-label="Go to home">
@@ -15,20 +22,13 @@ const Nav = ({ userName }) => {
         <span>iBudgets</span>
       </NavLink>
       {userName && (
-        <Form
-          method="post"
-          action="logout"
-          onSubmit={(event) => {
-            if (!confirm("Delete user and all data?")) {
-              event.preventDefault();
-            }
-          }}
+        <button
+          onClick={handleRedirect}
+          className="btn btn--dark text-white bg-hslblack flex items-center justify-center px-4 py-2 text-base font-normal mr-2"
         >
-          <button type="submit" className="btn btn--warning text-white bg-hslwarning flex items-center justify-center px-4 py-2 text-base font-normal mr-2">
-            <span>Delete User</span>
-            <TrashIcon width={20} />
-          </button>
-        </Form>
+          <span>Go Back</span>
+          <ArrowUturnLeftIcon width={20} />
+        </button>
       )}
     </nav>
   );
