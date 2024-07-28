@@ -12,7 +12,6 @@ import supabase from "../../supabaseClient";
 const Nav = ({ userName, user }) => {
   const navigate = useNavigate();
   const handleRedirect = () => {
-    console.log("Test");
     localStorage.removeItem("userName");
     navigate(0);
   };
