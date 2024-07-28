@@ -52,7 +52,7 @@ export async function dashboardAction({ request }) {
         currentBudgets: budgets,
       });
       if (createBudgetRes === "ALREADY_EXISTS") {
-        return toast.error("Budget name is already used!");
+        return toast.error("Budget name already in use!");
       } else {
         return toast.success("Budget created!");
       }
