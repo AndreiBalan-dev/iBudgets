@@ -59,7 +59,6 @@ The application has been delployed to Vercel.
 - React Router DOM: A library for adding navigation to React applications.
 - Supabase: A backend-as-a-service providing database and authentication solutions.
 - Node.js: JavaScript runtime for server-side development.
-- Express: A web application framework for Node.js.
   
 ## Contributors
 - [@AndreiBalan-dev](https://github.com/AndreiBalan-dev)
