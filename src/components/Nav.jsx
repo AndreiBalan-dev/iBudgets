@@ -12,7 +12,6 @@ import supabase from "../../supabaseClient";
 const Nav = ({ userName, user }) => {
   const navigate = useNavigate();
   const handleRedirect = () => {
-    console.log("Test");
     localStorage.removeItem("userName");
     navigate(0);
   };
@@ -23,11 +22,15 @@ const Nav = ({ userName, user }) => {
     }, 3000);
   };
 
+  const handleRefresh = async () => {
+    navigate(0);
+  };
+
   return (
     <nav>
-      <NavLink to="/" aria-label="Go to home">
+      <NavLink to="/" onClick={handleRefresh} aria-label="Go to home">
         <img src={logomark} alt="iBudget Home" height={30} />
-        <span>iBudgets</span>
+        <span>iBudget</span>
       </NavLink>
       {userName && (
         <button
