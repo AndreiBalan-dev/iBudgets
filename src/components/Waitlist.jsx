@@ -40,10 +40,10 @@ const Waitlist = ({ handleGoBack }) => {
   };
 
   return (
-    <div className="flex flex-col justify-center min-w-full items-center">
-      <h2 className="flex text-7xl sm:text-7xl md:text-7.5xl lg:text-8xl font-bold mb-4 gap-5 flex-col md:flex-row items-center justify-center">
-        <span>Join Our</span>
-        <span className="accent text-7.5xl sm:text-9xl md:text-7.5xl">
+    <div className="flex flex-col justify-center min-w-full items-center text-center">
+      <h2 className="flex text-7xl sm:text-7xl md:text-7.5xl lg:text-8xl font-bold mb-4 gap-1 flex-col md:flex-row items-center justify-center">
+        <span className="text-6xl font-helvetica">Join Our</span>
+        <span className="accent font-helvetica text-7.5xl sm:text-9xl md:text-7.5xl">
           Waitlist
         </span>
       </h2>
