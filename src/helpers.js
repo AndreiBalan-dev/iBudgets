@@ -29,7 +29,12 @@ export const deleteItem = ({ key, id }) => {
 };
 
 // create budget
-export const createBudget = ({ name, amount }) => {
+export const createBudget = ({ name, amount, currentBudgets }) => {
+  for (const elem of currentBudgets) {
+    if (elem.name.toLowerCase() === name.toLowerCase()) {
+      return "ALREADY_EXISTS";
+    }
+  }
   const newItem = {
     id: crypto.randomUUID(),
     name: name,
