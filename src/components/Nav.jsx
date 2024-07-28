@@ -1,5 +1,5 @@
 // rrd imports
-import { Form, NavLink, useNavigate } from "react-router-dom";
+import { Form, NavLink, useNavigate, useLocation } from "react-router-dom";
 
 // library
 import { ArrowUturnLeftIcon } from "@heroicons/react/24/solid";
@@ -11,6 +11,8 @@ import supabase from "../../supabaseClient";
 
 const Nav = ({ userName, user }) => {
   const navigate = useNavigate();
+  const location = useLocation();
+
   const handleRedirect = () => {
     localStorage.removeItem("userName");
     navigate(0);
@@ -23,7 +25,13 @@ const Nav = ({ userName, user }) => {
   };
 
   const handleRefresh = async () => {
-    navigate(0);
+    const path = location.pathname;
+
+    if (path.startsWith("/budget/")) {
+      navigate(-1);
+    } else if (path === "/") {
+      navigate(0);
+    }
   };
 
   return (
