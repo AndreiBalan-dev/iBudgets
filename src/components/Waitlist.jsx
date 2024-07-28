@@ -11,7 +11,6 @@ const Waitlist = ({ handleGoBack }) => {
     async function fetchData() {
       const { data, error } = await supabase.from("users").select("email");
       if (data) {
-        console.log("data", data);
         setEmails(data);
       }
       if (error) {
@@ -30,13 +29,13 @@ const Waitlist = ({ handleGoBack }) => {
     } else {
       const { data, error } = await supabase.from("users").insert([{ email }]);
       if (data) {
-        console.log("data", data);
+        console.log("horray! you've signed up");
       }
       if (error) {
-        console.log("error has occured", error);
         setMessage("An error occurred. Please try again later.");
       }
     }
+    setMessage("Thank you for signing up! You'll hear from us soon.");
     setEmail("");
   };
 
