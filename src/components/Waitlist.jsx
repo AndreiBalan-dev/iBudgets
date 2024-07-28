@@ -12,11 +12,14 @@ const Waitlist = ({ handleGoBack }) => {
   };
 
   return (
-    <div className="flex flex-col justify-center min-w-full justify-items-center items-center">
-      <h2 className="text-8xl font-bold mb-4">
-        Join Our <span className="accent">Waitlist</span>
+    <div className="flex flex-col justify-center min-w-full items-center">
+      <h2 className="flex text-7xl sm:text-7xl md:text-8xl font-bold mb-4 gap-5 flex-col sm:flex-row items-center justify-center">
+        <span>Join</span>
+        <span className="">Our</span>
+        <span className="accent">Waitlist</span>
       </h2>
-      <p className="mb-6">
+
+      <p className="mb-6 text-sm sm:text-lg md:text-xl">
         Sign up with your email to join our waitlist for premium features.
       </p>
       <form onSubmit={handleSubmit} className="w-full max-w-sm">
@@ -40,13 +43,13 @@ const Waitlist = ({ handleGoBack }) => {
         <div className="flex flex-col gap-2 items-center justify-between">
           <button
             type="submit"
-            className="btn btn--dark text-white bg-hslblack flex items-center justify-center px-4 py-2 text-base font-normal ml-2"
+            className="btn btn--dark text-white bg-hslblack flex items-center justify-center px-4 py-2 text-base font-normal ml-2 sm:min-w-screen-sm md:min-w-screen-md min-w-full"
           >
             Sign Up
           </button>
           <button
             onClick={handleGoBack}
-            className="btn btn--dark text-white bg-hslblack flex items-center justify-center px-4 py-2 text-base font-normal ml-2"
+            className="btn btn--dark text-white bg-hslblack flex items-center justify-center px-4 py-2 text-base font-normal ml-2 sm:min-w-screen-sm md:min-w-screen-md min-w-full"
           >
             Go Back
           </button>
