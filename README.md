@@ -12,7 +12,7 @@ Our frontend application is built using React and Vite, offering a fast and effi
 ### Backend Application
 The backend is powered by Supabase, providing robust and scalable data storage. Authentication is implemented using Supabase's authentication service, supporting email and Google login. Email verification ensures secure access to user accounts.
 
-**Tech Stack:** Supabase, Node.js, Express
+**Tech Stack:** Supabase
 
 ## Features
 - **Account Management:** Create and delete user accounts.
