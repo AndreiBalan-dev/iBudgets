@@ -63,7 +63,7 @@ const Intro = () => {
         <Waitlist handleGoBack={handleGoBack} />
       )}
       {!isInDiscoverPage && !isInLoginPage && (
-        <div className="intro">
+        <div className="intro flex flex-col">
           <h1 className="intro-heading">
             Take Control of <br />
             <span className="accent whitespace-nowrap">Your Money</span>
@@ -73,14 +73,14 @@ const Intro = () => {
               onClick={handleDiscoverPremium}
               name="_action"
               value="discoverPremium"
-              className="btn btn--premium flex items-center justify-center w-full max-w-xs px-4 py-2 text-base font-nosrmal mt-4"
+              className="btn btn--premium flex bg-electric_blue text-white items-center justify-center w-full max-w-xs px-4 py-2 text-base mt-4"
             >
               <span>Discover Premium</span>
               <StarIcon width={20} />
             </button>
             <button
               onClick={handleLoginPage}
-              className="btn btn--dark flex items-center justify-center w-full max-w-xs py-6 text-lg font-normal mt-4"
+              className="btn btn--dark bg-hslblack text-white flex items-center justify-center w-full max-w-xs py-2 text-base mt-4"
             >
               <span>Sign In / Sign Up</span>
               <UserCircleIcon width={20} />
