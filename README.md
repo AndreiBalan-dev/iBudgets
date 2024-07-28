@@ -34,7 +34,7 @@ Before you start, ensure you have the following prerequisites installed:
 Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/ibudget.git
+git clone https://github.com/andreibalan-dev/ibudgets.git
 cd ibudget
 npm install
 ```
@@ -55,9 +55,10 @@ The application has been delployed to Vercel.
 - Express: A web application framework for Node.js.
   
 ## Contributors
-@suryanshchauhan
-@Andrei-Balan-dev
-@
+- [@luisarevalo21](https://github.com/luisarevalo21)
+- [@AndreiBalan-dev](https://github.com/AndreiBalan-dev)
+- [@jahnltib](https://github.com/jahnltib)
+- [@suryanshchauhan](https://github.com/suryanshchauhan)
 
 ## License
 This project is licensed under the MIT License. See the LICENSE file for details.
