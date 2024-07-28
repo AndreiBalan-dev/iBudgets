@@ -1,6 +1,6 @@
 # iBudget: A Comprehensive Budget Management Application
 
-Welcome to iBudget, a versatile budget management application built using React and Vite. This full-stack application enables users to create and manage accounts, add various budgets, track expenses within those budgets, and provides functionalities to delete budgets, expenses, and accounts. The app includes authentication and database integration to ensure secure and efficient data management.
+Welcome to iBudget, a versatile budget management application. This full-stack application enables users to create and manage accounts, add various budgets, track expenses within those budgets, and provides functionalities to delete budgets, expenses, and accounts. The app includes authentication and database integration to ensure secure and efficient data management.
 
 ## Project Structure
 
