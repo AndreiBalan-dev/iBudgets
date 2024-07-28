@@ -55,9 +55,9 @@ The application has been delployed to Vercel.
 - Express: A web application framework for Node.js.
   
 ## Contributors
-- [@luisarevalo21](https://github.com/luisarevalo21)
 - [@AndreiBalan-dev](https://github.com/AndreiBalan-dev)
 - [@jahnltib](https://github.com/jahnltib)
+- [@luisarevalo21](https://github.com/luisarevalo21)
 - [@suryanshchauhan](https://github.com/suryanshchauhan)
 
 ## License
