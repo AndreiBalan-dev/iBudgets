@@ -88,8 +88,8 @@ const Intro = () => {
           <>
             <div className="intro flex flex-col">
               <h1 className="flex flex-col items-center intro-heading justify-items-center whitespace-nowrap">
-                <span>Take Control of</span>
-                <span className="accent">Your Money</span>
+                <span className="text-5xl font-helvetica">Take Control of</span>
+                <span className="accent text-[5.6rem]">Your Money</span>
               </h1>
               <div className="intro-buttons-container">
                 <button
@@ -129,8 +129,8 @@ const Intro = () => {
           <>
             <div className="intro flex flex-col">
               <h1 className="flex flex-col items-center intro-heading justify-items-center whitespace-nowrap">
-                <span>Take Control of</span>
-                <span className="accent">Your Money</span>
+                <span className="text-6xl font-helvetica">Take Control of</span>
+                <span className="accent text-8xl">Your Money</span>
               </h1>
               <div className="intro-buttons-container">
                 <button
