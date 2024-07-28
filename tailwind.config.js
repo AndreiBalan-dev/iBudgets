@@ -6,7 +6,8 @@ module.exports = {
       colors: {
         hslblack: "#111c1d",
         hslwarning: "#df6b62",
-        hslred: "	#d22d2d",
+        hslred: "#d22d2d",
+        electric_blue: "#1DBCC3",
       },
     },
   },
