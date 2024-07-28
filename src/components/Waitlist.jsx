@@ -9,7 +9,7 @@ const Waitlist = ({ handleGoBack }) => {
   const [emails, setEmails] = useState([]);
   useEffect(() => {
     async function fetchData() {
-      const { data, error } = await supabase.from("users").select("email");
+      const { data, error } = await supabase.from("waitlist").select("email");
       if (data) {
         setEmails(data);
       }
@@ -27,7 +27,9 @@ const Waitlist = ({ handleGoBack }) => {
     if (emails.some((user) => user.email === email)) {
       setMessage("Thank you for signing up! You'll hear from us soon.");
     } else {
-      const { data, error } = await supabase.from("users").insert([{ email }]);
+      const { data, error } = await supabase
+        .from("waitlist")
+        .insert([{ email }]);
       if (data) {
         console.log("horray! you've signed up");
       }
@@ -41,9 +43,11 @@ const Waitlist = ({ handleGoBack }) => {
 
   return (
     <div className="flex flex-col justify-center min-w-full items-center text-center">
-      <h2 className="flex text-7xl sm:text-7xl md:text-7.5xl lg:text-8xl font-bold mb-4 gap-1 flex-col md:flex-row items-center justify-center">
-        <span className="text-6xl font-helvetica">Join Our</span>
-        <span className="accent font-helvetica text-7.5xl sm:text-9xl md:text-7.5xl">
+      <h2 className="flex text-7xl sm:text-7xl md:text-7.5xl lg:text-8xl font-bold mb-4 gap-1 md:gap-6 flex-col md:flex-row items-center justify-center">
+        <span className="text-4xl sm:text-5xl md:text-7.5xl font-helvetica">
+          Join Our
+        </span>
+        <span className="accent font-helvetica text-6xl sm:text-7xl md:text-7.5xl">
           Waitlist
         </span>
       </h2>

@@ -109,7 +109,11 @@ const Dashboard = () => {
       const session = await supabase.auth.getSession();
       if (session.data.session !== null) {
         setIsLoggedIn(true);
-        setUsername(session.data.session.user.user_metadata.full_name);
+        let username = session.data.session.user.user_metadata.full_name;
+        if (username.split(" ").length > 1) {
+          username = username.split(" ")[0];
+        }
+        setUsername(username);
       }
     };
     getSession();
