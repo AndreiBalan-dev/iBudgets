@@ -30,6 +30,7 @@ export const deleteItem = ({ key, id }) => {
 
 // create budget
 export const createBudget = ({ name, amount, currentBudgets }) => {
+  console.log(currentBudgets);
   for (const elem of currentBudgets) {
     if (elem.name.toLowerCase() === name.toLowerCase()) {
       return "ALREADY_EXISTS";
