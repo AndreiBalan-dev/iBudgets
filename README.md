@@ -63,7 +63,7 @@ The application has been delployed to Vercel.
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 ## Acknowledgements
-We would like to thank the #CodedexSummerHackathon2024 for organizing this amazing hackathon.
+We would like to thank the #HeadstarerHackathon for organizing this amazing hackathon.
 
 ## Contact
 For any queries or collaboration opportunities, feel free to reach out to us!
