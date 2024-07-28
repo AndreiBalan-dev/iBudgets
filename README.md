@@ -1,7 +1,7 @@
 # iBudget: A Budget Management Application
 
 - project developed for the #HeadstarterHackathon
-- 
+  
 Welcome to iBudget, a versatile budget management application. This full-stack application enables users to create and manage accounts, add various budgets, track expenses within those budgets, and provides functionalities to delete budgets, expenses, and accounts. The app includes authentication and database integration to ensure secure and efficient data management.
 
 ### This project was done in 36 hours.
