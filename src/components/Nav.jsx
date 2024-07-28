@@ -23,9 +23,13 @@ const Nav = ({ userName, user }) => {
     }, 3000);
   };
 
+  const handleRefresh = async () => {
+    navigate(0);
+  };
+
   return (
     <nav>
-      <NavLink to="/" aria-label="Go to home">
+      <NavLink to="/" onClick={handleRefresh} aria-label="Go to home">
         <img src={logomark} alt="iBudget Home" height={30} />
         <span>iBudgets</span>
       </NavLink>
