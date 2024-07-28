@@ -44,13 +44,20 @@ export async function dashboardAction({ request }) {
   console.log(_action);
 
   if (_action === "createBudget") {
+    const budgets = fetchData("budgets");
     try {
-      createBudget({
+      const createBudgetRes = createBudget({
         name: values.newBudget,
         amount: values.newBudgetAmount,
+        currentBudgets: budgets,
       });
-      return toast.success("Budget created!");
+      if (createBudgetRes === "ALREADY_EXISTS") {
+        return toast.error("Budget name is already used!");
+      } else {
+        return toast.success("Budget created!");
+      }
     } catch (e) {
+      console.log(e);
       throw new Error("There was a problem creating your budget.");
     }
   }
