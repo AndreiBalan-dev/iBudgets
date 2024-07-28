@@ -14,7 +14,13 @@ import BudgetItem from "../components/BudgetItem";
 import Table from "../components/Table";
 
 //  helper functions
-import { createBudget, createExpense, deleteItem, fetchData, waait } from "../helpers";
+import {
+  createBudget,
+  createExpense,
+  deleteItem,
+  fetchData,
+  waait,
+} from "../helpers";
 import Waitlist from "../components/Waitlist";
 
 // loader
@@ -82,7 +88,7 @@ const Dashboard = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [inLoginPage, setInLoginPage] = useState(false);
 
-  supabase.auth.onAuthStateChange(async event => {
+  supabase.auth.onAuthStateChange(async (event) => {
     if (event === "SIGNED_IN") {
       setIsLoggedIn(true);
     } else if (event === "SIGNED_OUT") {
@@ -117,14 +123,18 @@ const Dashboard = () => {
                 </div>
                 <h2>Existing Budgets</h2>
                 <div className="budgets">
-                  {budgets.map(budget => (
+                  {budgets.map((budget) => (
                     <BudgetItem key={budget.id} budget={budget} />
                   ))}
                 </div>
                 {expenses && expenses.length > 0 && (
                   <div className="grid-md">
                     <h2>Recent Expenses</h2>
-                    <Table expenses={expenses.sort((a, b) => b.createdAt - a.createdAt).slice(0, 8)} />
+                    <Table
+                      expenses={expenses
+                        .sort((a, b) => b.createdAt - a.createdAt)
+                        .slice(0, 8)}
+                    />
                     {expenses.length > 8 && (
                       <Link
                         to="expenses"
