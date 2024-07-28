@@ -13,6 +13,9 @@ module.exports = {
       fontSize: {
         "7.5xl": ["5.70rem", "1"],
       },
+      fontFamily: {
+        helvetica: ['"Helvetica Neue"', "sans-serif"],
+      },
     },
   },
   plugins: [],
