@@ -30,7 +30,7 @@ const Nav = ({ userName, user }) => {
     <nav>
       <NavLink to="/" onClick={handleRefresh} aria-label="Go to home">
         <img src={logomark} alt="iBudget Home" height={30} />
-        <span>iBudgets</span>
+        <span>iBudget</span>
       </NavLink>
       {userName && (
         <button
