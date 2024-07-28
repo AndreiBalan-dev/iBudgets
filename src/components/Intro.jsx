@@ -1,35 +1,58 @@
-import React, { useRef, useState } from "react";
-import { Form } from "react-router-dom";
+import React, { useRef, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 // library
 import { StarIcon, UserCircleIcon } from "@heroicons/react/24/solid";
 
 // assets
 import illustration from "../assets/illustration.jpg";
-import womanWithLaptop from "../assets/woman-with-laptop.png"; 
-import budgetBoxes from "../assets/budget-boxes.png"; 
+import womanWithLaptop from "../assets/woman-with-laptop.png";
+import budgetBoxes from "../assets/budget-boxes.png";
 import LoginPage from "./LoginPage";
 import Waitlist from "./Waitlist";
 
-
-
 const Intro = () => {
   const formRef = useRef(null);
+  const navigate = useNavigate();
   const [isInLoginPage, setIsInLoginPage] = useState(false);
   const [isInDiscoverPage, setIsInDiscoverPage] = useState(false);
+  const [history, setHistory] = useState([]);
 
   const handleDiscoverPremium = () => {
+    setHistory((prev) => [...prev, { isInLoginPage, isInDiscoverPage }]);
     setIsInDiscoverPage(true);
+    window.history.pushState(null, "", window.location.href);
   };
 
   const handleLoginPage = () => {
+    setHistory((prev) => [...prev, { isInLoginPage, isInDiscoverPage }]);
     setIsInLoginPage(true);
+    window.history.pushState(null, "", window.location.href);
   };
 
   const handleGoBack = () => {
-    setIsInLoginPage(false);
-    setIsInDiscoverPage(false);
+    if (history.length > 0) {
+      const prevState = history[history.length - 1];
+      setIsInLoginPage(prevState.isInLoginPage);
+      setIsInDiscoverPage(prevState.isInDiscoverPage);
+      setHistory((prev) => prev.slice(0, prev.length - 1));
+    } else {
+      setIsInLoginPage(false);
+      setIsInDiscoverPage(false);
+    }
   };
+
+  useEffect(() => {
+    const handlePopState = (event) => {
+      handleGoBack();
+    };
+
+    window.addEventListener("popstate", handlePopState);
+
+    return () => {
+      window.removeEventListener("popstate", handlePopState);
+    };
+  }, []);
 
   return (
     <>
@@ -42,7 +65,8 @@ const Intro = () => {
       {!isInDiscoverPage && !isInLoginPage && (
         <div className="intro">
           <h1 className="intro-heading">
-            Take Control of <br /><span className="accent whitespace-nowrap">Your Money</span>
+            Take Control of <br />
+            <span className="accent whitespace-nowrap">Your Money</span>
           </h1>
           <div className="intro-buttons-container">
             <button
@@ -64,33 +88,33 @@ const Intro = () => {
           </div>
           <div className="intro-content">
             <div className="intro-text"></div>
-            <div 
-              className="intro-images" 
+            <div
+              className="intro-images"
               style={{
-                display: 'flex',
-                flexDirection: 'row',
-                gap: 'var(--space-lg)',
-                justifyContent: 'center',
-                alignItems: 'center'
+                display: "flex",
+                flexDirection: "row",
+                gap: "var(--space-lg)",
+                justifyContent: "center",
+                alignItems: "center",
               }}
             >
-              <img 
-                src={womanWithLaptop} 
-                alt="Woman with laptop" 
+              <img
+                src={womanWithLaptop}
+                alt="Woman with laptop"
                 style={{
-                  maxWidth: '100%',
-                  width: '200px',
-                  borderRadius: 'var(--round-lg)'
-                }} 
+                  maxWidth: "100%",
+                  width: "200px",
+                  borderRadius: "var(--round-lg)",
+                }}
               />
-              <img 
-                src={budgetBoxes} 
-                alt="Budget boxes" 
+              <img
+                src={budgetBoxes}
+                alt="Budget boxes"
                 style={{
-                  maxWidth: '100%',
-                  width: '200px',
-                  borderRadius: 'var(--round-lg)'
-                }} 
+                  maxWidth: "100%",
+                  width: "200px",
+                  borderRadius: "var(--round-lg)",
+                }}
               />
             </div>
           </div>
