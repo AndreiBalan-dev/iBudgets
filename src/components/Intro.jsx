@@ -20,6 +20,7 @@ const Intro = () => {
   const [isInDiscoverPage, setIsInDiscoverPage] = useState(false);
   const [history, setHistory] = useState([]);
   const [isOnMobile, setIsOnMobile] = useState(false);
+  const [underThreeHundred, setUnderThreeHundred] = useState(false);
 
   const handleDiscoverPremium = () => {
     setHistory((prev) => [...prev, { isInLoginPage, isInDiscoverPage }]);
@@ -61,15 +62,21 @@ const Intro = () => {
     function handleResize() {
       const windowWidth = window.innerWidth;
       if (windowWidth < 1000) {
-        setIsOnMobile(false);
-      } else {
         setIsOnMobile(true);
+        if (windowWidth < 350) {
+          setUnderThreeHundred(true);
+          console.log(windowWidth);
+        } else {
+          setUnderThreeHundred(false);
+        }
+      } else {
+        setUnderThreeHundred(false);
+        setIsOnMobile(false);
       }
     }
 
     window.addEventListener("resize", handleResize);
     handleResize();
-    console.log("A");
 
     return () => window.removeEventListener("resize", handleResize);
   });
@@ -84,70 +91,85 @@ const Intro = () => {
       )}
       {!isInDiscoverPage &&
         !isInLoginPage &&
-        (!isOnMobile ? (
+        (isOnMobile ? (
           <>
             <div className="intro flex flex-col">
-              <h1 className="flex flex-col items-center intro-heading justify-items-center whitespace-nowrap">
-                <span className="text-5xl font-helvetica">Take Control of</span>
-                <span className="accent text-[5.6rem]">Your Money</span>
+              <h1 className="flex flex-col items-center intro-heading justify-items-center text-center">
+                <span className="text-2xl font-helvetica">Take Control of</span>
+                <span className="accent text-[3rem]">Your Money</span>
               </h1>
               <div className="intro-buttons-container">
-                <button
-                  onClick={handleDiscoverPremium}
-                  name="_action"
-                  value="discoverPremium"
-                  className="btn btn--premium flex bg-electric_blue text-white items-center justify-center w-full max-w-xs px-4 py-2 text-base mt-4"
-                >
-                  <span>Discover Premium</span>
-                  <StarIcon width={20} />
-                </button>
                 <button
                   onClick={handleLoginPage}
                   className="btn btn--dark bg-hslblack text-white flex items-center justify-center w-full max-w-xs py-2 text-base mt-4"
                 >
-                  <span>Sign In / Sign Up</span>
+                  <span className="font-semibold">Sign In / Sign Up</span>
                   <UserCircleIcon width={20} />
+                </button>
+                <button
+                  onClick={handleDiscoverPremium}
+                  name="_action"
+                  value="discoverPremium"
+                  className="btn btn--premium flex bg-electric_blue text-white items-center justify-center w-full max-w-xs px-4 py-2 text-base mt-2"
+                >
+                  <span>Discover Premium</span>
+                  <StarIcon width={20} />
                 </button>
               </div>
             </div>
-            <div className=" min-w-full mt-8">
-              <div className=" flex flex-row items-center justify-items-start justify-center gap-8">
-                <img
-                  src={womanWithLaptop}
-                  alt="Woman with laptop"
-                  className="rounded-lg max-w-[140px] sm:max-w-[200px]"
-                />
-                <img
-                  src={budgetBoxes}
-                  alt="Budget boxes"
-                  className="rounded-lg max-w-[140px] sm:max-w-[200px]"
-                />
-              </div>
+            <div className="min-w-full mt-8">
+              {underThreeHundred ? (
+                <div className="flex flex-col items-center justify-center gap-8">
+                  <img
+                    src={womanWithLaptop}
+                    alt="Woman with laptop"
+                    className="rounded-lg max-w-[140px] sm:max-w-[200px]"
+                  />
+                  <img
+                    src={budgetBoxes}
+                    alt="Budget boxes"
+                    className="rounded-lg max-w-[140px] sm:max-w-[200px]"
+                  />
+                </div>
+              ) : (
+                <div className=" flex flex-row items-center justify-items-start justify-center gap-8">
+                  <img
+                    src={womanWithLaptop}
+                    alt="Woman with laptop"
+                    className="rounded-lg max-w-[140px] sm:max-w-[200px]"
+                  />
+                  <img
+                    src={budgetBoxes}
+                    alt="Budget boxes"
+                    className="rounded-lg max-w-[140px] sm:max-w-[200px]"
+                  />
+                </div>
+              )}
             </div>
           </>
         ) : (
           <>
             <div className="intro flex flex-col">
-              <h1 className="flex flex-col items-center intro-heading justify-items-center whitespace-nowrap">
+              <h1 className="flex flex-col items-center intro-heading justify-items-center">
                 <span className="text-6xl font-helvetica">Take Control of</span>
                 <span className="accent text-8xl">Your Money</span>
               </h1>
               <div className="intro-buttons-container">
                 <button
-                  onClick={handleDiscoverPremium}
-                  name="_action"
-                  value="discoverPremium"
-                  className="btn btn--premium flex bg-electric_blue text-white items-center justify-center w-full max-w-xs px-4 py-2 text-base mt-4"
-                >
-                  <span>Discover Premium</span>
-                  <StarIcon width={20} />
-                </button>
-                <button
                   onClick={handleLoginPage}
                   className="btn btn--dark bg-hslblack text-white flex items-center justify-center w-full max-w-xs py-2 text-base mt-4"
                 >
-                  <span>Sign In / Sign Up</span>
+                  <span className="font-semibold">Sign In / Sign Up</span>
                   <UserCircleIcon width={20} />
+                </button>
+                <button
+                  onClick={handleDiscoverPremium}
+                  name="_action"
+                  value="discoverPremium"
+                  className="btn btn--premium flex bg-electric_blue text-white items-center justify-center w-full max-w-xs px-4 py-2 text-base mt-2"
+                >
+                  <span>Discover Premium</span>
+                  <StarIcon width={20} />
                 </button>
               </div>
             </div>
