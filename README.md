@@ -1,26 +1,69 @@
-# iBudgets
-iBudgets is an easy-to-use and intuitive personal budget management web application. It helps users to assign a certain amount to a category, and the log any spendings in that category. Having everything in one place, iBudgets can help users get a clear overview of their financial situation. iBudgets is designed to be accessible and user-friendly, making it an excellent tool for individuals looking to take control of their personal finances.
-<br>
-<br>
-Check out the deployed project: [TBD]
-<br>
-<h2>Features</h2>
-<ul>
-<li>Customizable categories</li>
-<li>Manage multiple categories</li>
-<li>Track multiple transacation for a certain category</li>
-<li>Transcation history with option to delete transcations</li>
-<li>Responsive design, optimized for both desktop and mobile devices</li>
-<li>No sign up required, all your data is stored in your local storage. The data will stay as long as you "Delete User" or clear your browser history</li>
-</ul>
+# iBudget: A Comprehensive Budget Management Application
 
-<h2>Technologies Used</h2>
-<ul>
-<li>HTML</li>
-<li>CSS</li>
-<li>JavaScript</li>
-<li>React</li>
-</ul>
+Welcome to iBudget, a versatile budget management application built using React and Vite. This full-stack application enables users to create and manage accounts, add various budgets, track expenses within those budgets, and provides functionalities to delete budgets, expenses, and accounts. The app includes authentication and database integration to ensure secure and efficient data management.
 
-<img width="1324" alt="image" src="https://user-images.githubusercontent.com/66567078/229796969-33603143-e65a-45a7-a2ee-62609fdbc786.png">
-<img width="1324" alt="image" src="https://user-images.githubusercontent.com/66567078/229798600-1c7018c8-3c70-4dd5-93e4-cac20fb3c784.png">
+## Project Structure
+
+### Frontend Application
+Our frontend application is built using React and Vite, offering a fast and efficient development experience. React Router DOM is employed for navigation, providing a seamless user experience.
+
+**Tech Stack:** React, Vite, React Router DOM
+
+### Backend Application
+The backend is powered by Supabase, providing robust and scalable data storage. Authentication is implemented using Supabase's authentication service, supporting email and Google login. Email verification ensures secure access to user accounts.
+
+**Tech Stack:** Supabase, Node.js, Express
+
+## Features
+- **Account Management:** Create and delete user accounts.
+- **Budget Creation:** Add and delete budgets for different categories.
+- **Expense Tracking:** Add and delete expenses within specific budgets.
+- **Navigation:** Utilizes React Router DOM for page navigation.
+- **Deletion:** Delete budgets, expenses, and accounts.
+- **Authentication:** Secure login via email or Google, with email verification.
+- **Database Integration:** Data stored and managed using Supabase.
+
+## Usage Instructions
+
+### Getting Started
+Before you start, ensure you have the following prerequisites installed:
+- Node.js (>=14.0.0)
+- npm or Yarn
+
+### Installation
+Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/ibudget.git
+cd ibudget
+npm install
+```
+
+To start the application:
+```bash
+npm run dev
+```
+## Deployment
+The application has been delployed to Vercel. 
+
+### Technologies Used
+- React: A JavaScript library for building user interfaces.
+- Vite: A fast build tool that enhances development experience.
+- React Router DOM: A library for adding navigation to React applications.
+- Supabase: A backend-as-a-service providing database and authentication solutions.
+- Node.js: JavaScript runtime for server-side development.
+- Express: A web application framework for Node.js.
+  
+## Contributors
+@
+@
+@
+
+## License
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+## Acknowledgements
+We would like to thank the #CodedexSummerHackathon2024 for organizing this amazing hackathon.
+
+## Contact
+For any queries or collaboration opportunities, feel free to reach out to us!
