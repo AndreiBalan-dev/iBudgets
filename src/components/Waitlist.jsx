@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { RocketLaunchIcon } from "@heroicons/react/24/solid";
 import supabase from "../../supabaseClient";
 
@@ -6,21 +6,37 @@ const Waitlist = ({ handleGoBack }) => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
+  const [emails, setEmails] = useState([]);
+  useEffect(() => {
+    async function fetchData() {
+      const { data, error } = await supabase.from("users").select("email");
+      if (data) {
+        console.log("data", data);
+        setEmails(data);
+      }
+      if (error) {
+        console.log("error has occured", error);
+      }
+    }
+    fetchData();
+  }, []);
+
   const handleSubmit = async e => {
     e.preventDefault();
     // Add your form submission logic here, e.g., sending the email to your backend.
-    setMessage("Thank you for signing up! You'll hear from us soon.");
 
-    const { data, error } = await supabase.from("users").insert([{ email }]).select("email");
-
-    if (error) {
-      console.log("error", error);
+    if (emails.some(user => user.email === email)) {
+      setMessage("Thank you for signing up! You'll hear from us soon.");
+    } else {
+      const { data, error } = await supabase.from("users").insert([{ email }]);
+      if (data) {
+        console.log("data", data);
+      }
+      if (error) {
+        console.log("error has occured", error);
+        setMessage("An error occurred. Please try again later.");
+      }
     }
-
-    if (data) {
-      console.log("data", data);
-    }
-
     setEmail("");
   };
 
