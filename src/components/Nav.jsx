@@ -44,7 +44,7 @@ const Nav = ({ userName, user }) => {
 
       {user && (
         <button
-          className="btn text-dark flex items-center justify-center px-4 py-2 text-base font-bold mr-2"
+          className="btn text-dark bg-electric_blue_opaque flex items-center justify-center px-4 py-2 text-base font-bold mr-2"
           onClick={handleSignout}
         >
           Signout
